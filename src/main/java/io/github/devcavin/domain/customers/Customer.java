@@ -1,18 +1,18 @@
 package io.github.devcavin.domain.customers;
 
 import io.github.devcavin.domain.valueobject.CustomerId;
-import io.github.devcavin.domain.valueobject.EmailObject;
-import io.github.devcavin.domain.valueobject.NameObject;
+import io.github.devcavin.domain.valueobject.Email;
+import io.github.devcavin.domain.valueobject.Name;
 
 import java.util.Objects;
 
 public class Customer {
 
     private final CustomerId id;
-    private EmailObject email;
-    private NameObject name;
+    private Email email;
+    private Name name;
 
-    public Customer(CustomerId id, EmailObject email, NameObject name) {
+    public Customer(CustomerId id, Email email, Name name) {
         this.id = Objects.requireNonNull(id);
         this.email = Objects.requireNonNull(email);
         this.name = Objects.requireNonNull(name);
@@ -22,19 +22,19 @@ public class Customer {
         return id;
     }
 
-    public EmailObject getEmail() {
+    public Email getEmail() {
         return email;
     }
 
-    public NameObject getName() {
+    public Name getName() {
         return name;
     }
 
-    public void changeEmail(EmailObject newEmail) {
+    public void changeEmail(Email newEmail) {
         this.email = Objects.requireNonNull(newEmail);
     }
 
-    public void changeName(NameObject newName) {
+    public void changeName(Name newName) {
         this.name = Objects.requireNonNull(newName);
     }
 }

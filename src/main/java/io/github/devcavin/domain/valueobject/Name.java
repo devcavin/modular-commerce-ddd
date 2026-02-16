@@ -2,9 +2,9 @@ package io.github.devcavin.domain.valueobject;
 
 import java.util.Objects;
 
-public record NameObject(String value) {
+public record Name(String value) {
 
-    public NameObject(String value) {
+    public Name(String value) {
         Objects.requireNonNull(value, "Name cannot be null");
 
         String normalized = value.trim();
@@ -20,7 +20,7 @@ public record NameObject(String value) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NameObject that = (NameObject) o;
+        Name that = (Name) o;
         return value.equals(that.value);
     }
 

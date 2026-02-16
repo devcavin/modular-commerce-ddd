@@ -3,14 +3,14 @@ package io.github.devcavin.domain.valueobject;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-public final class EmailObject {
+public final class Email {
 
     private static final Pattern EMAIL_REGEX =
             Pattern.compile("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,}$");
 
     private final String value;
 
-    public EmailObject(String value) {
+    public Email(String value) {
         Objects.requireNonNull(value, "Email cannot be null");
 
         String normalized = value.trim().toLowerCase();
@@ -31,7 +31,7 @@ public final class EmailObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EmailObject email = (EmailObject) o;
+        Email email = (Email) o;
         return value.equals(email.value);
     }
 
